@@ -4,6 +4,7 @@ function Form(props) {
 	return (
 		<form>
 			<input type='text' />
+			<button type='submit'>Search</button>
 		</form>
 	);
 }
