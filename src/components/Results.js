@@ -17,18 +17,22 @@ function Results(props) {
 	}, []);
 	return (
 		<div>
-			{recipes.map((recipe) => {
-				return (
-					<Link to={`recipe/${recipe.id}`} key={recipe.id}>
-						<div className='card' key={recipe.title}>
-							<div className='card-image'>
-								<img src={recipe.image} alt={recipe.title} />
-								<h3>{recipe.title}</h3>
+			<section className='container'>
+				{recipes.map((recipe) => {
+					return (
+						<Link to={`recipe/${recipe.id}`} key={recipe.id}>
+							<div className='card' key={recipe.title}>
+								<div className='card-image'>
+									<img src={recipe.image} alt={recipe.title} />
+								</div>
+								<div className='card-title'>
+									<h3>{recipe.title}</h3>
+								</div>
 							</div>
-						</div>
-					</Link>
-				);
-			})}
+						</Link>
+					);
+				})}
+			</section>
 		</div>
 	);
 }
