@@ -1,4 +1,6 @@
+import './Results.css';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 function Results(props) {
 	//save results into useState
@@ -17,9 +19,14 @@ function Results(props) {
 		<div>
 			{recipes.map((recipe) => {
 				return (
-					<div key={recipe.id}>
-						<img src={recipe.image} alt={recipe.title} />
-					</div>
+					<Link to={`recipe/${recipe.id}`} key={recipe.id}>
+						<div className='card' key={recipe.title}>
+							<div className='card-image'>
+								<img src={recipe.image} alt={recipe.title} />
+								<h3>{recipe.title}</h3>
+							</div>
+						</div>
+					</Link>
 				);
 			})}
 		</div>

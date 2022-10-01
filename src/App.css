@@ -9,6 +9,8 @@
   grid-column: 2 / span 2;
   grid-row: 2 / span 1;
   text-align: center;
+  /* background color placeholder */
+  background-color: #84A59D;
 }
 
 .App #form {

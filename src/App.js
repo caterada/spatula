@@ -2,21 +2,29 @@ import './App.css';
 import Header from './components/Header';
 import Form from './components/Form';
 import Results from './components/Results';
-import { useEffect, useState } from 'react';
+import RecipeDetails from './components/RecipeDetails';
 import Sidebar from './components/Sidebar';
+import { Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
 
 function App() {
+	useEffect(() => {
+		document.title = 'spatula';
+	});
 	return (
 		<div className='App'>
-			<div id='header'>
+			<header id='header'>
 				<Header />
-			</div>
+			</header>
 			<div id='form'>
 				<Form />
 			</div>
-			<div id='results'>
-				<Results />
-			</div>
+			<main id='results'>
+				<Routes>
+					<Route path='/' element={<Results />} />
+					<Route path='recipe/:id' element={<RecipeDetails />} />
+				</Routes>
+			</main>
 			<div id='sidebar'>
 				<Sidebar />
 			</div>
