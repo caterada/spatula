@@ -1,9 +1,15 @@
-import React from 'react';
+import './Form.css';
 
-function Form(props) {
+function Form({ handleSubmit, handleChange, searchString }) {
 	return (
-		<form>
-			<input type='text' />
+		<form onSubmit={handleSubmit}>
+			<input
+				onChange={handleChange}
+				name='searchString'
+				type='text'
+				placeholder='search recipe'
+				value={searchString}
+			/>
 			<button type='submit'>Search</button>
 		</form>
 	);

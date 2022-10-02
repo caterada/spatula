@@ -1,40 +1,30 @@
 import './Results.css';
-import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
-function Results(props) {
-	//save results into useState
-	const [recipes, setRecipes] = useState([]);
-	useEffect(() => {
-		const url = `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_SPOON_KEY}&number=12`;
-		fetch(url)
-			.then((res) => res.json())
-			.then((data) => {
-				console.log(data);
-				setRecipes(data.recipes);
-			})
-			.catch(console.error);
-	}, []);
+const Results = ({ results }) => {
+	if (!results.length) {
+		return <h2>No Images Found!</h2>;
+	}
+
 	return (
 		<div>
+			{console.log(results)}
 			<section className='container'>
-				{recipes.map((recipe) => {
-					return (
-						<div className='card' key={recipe.title}>
-							<div className='card-image'>
-								<Link to={`recipe/${recipe.id}`} key={recipe.id}>
-									<img src={recipe.image} alt={recipe.title} />
-								</Link>
-							</div>
-							<h3>
-								<div className='card-title'>{recipe.title}</div>
-							</h3>
+				{results.map((result) => (
+					<div className='card' key={result.title}>
+						<div className='card-image'>
+							<Link to={`/recipe/${result.id}`} key={result.id}>
+								<img src={result.image} alt={result.title} />
+							</Link>
 						</div>
-					);
-				})}
+						<h3>
+							<div className='card-title'> {result.title}</div>
+						</h3>
+					</div>
+				))}
 			</section>
 		</div>
 	);
-}
+};
 
 export default Results;

@@ -1,4 +1,18 @@
-.form {
+form {
     display: flex;
     justify-content: center;
+}
+
+input {
+    width: 30%;
+    padding: 0.5rem;
+    margin: 1rem 0rem;
+    background-color: #F28482;
+    color: #F7EDE2;
+}
+
+button {
+    margin: 1rem 0rem;
+    background-color: #F28482;
+    color:#F7EDE2;
 }
