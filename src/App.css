@@ -11,6 +11,7 @@
   text-align: center;
   /* background color placeholder */
   background-color: #84A59D;
+  position: sticky;
 }
 
 .App #form {

@@ -20,16 +20,16 @@ function Results(props) {
 			<section className='container'>
 				{recipes.map((recipe) => {
 					return (
-						<Link to={`recipe/${recipe.id}`} key={recipe.id}>
-							<div className='card' key={recipe.title}>
-								<div className='card-image'>
+						<div className='card' key={recipe.title}>
+							<div className='card-image'>
+								<Link to={`recipe/${recipe.id}`} key={recipe.id}>
 									<img src={recipe.image} alt={recipe.title} />
-								</div>
-								<div className='card-title'>
-									<h3>{recipe.title}</h3>
-								</div>
+								</Link>
 							</div>
-						</Link>
+							<h3>
+								<div className='card-title'>{recipe.title}</div>
+							</h3>
+						</div>
 					);
 				})}
 			</section>
