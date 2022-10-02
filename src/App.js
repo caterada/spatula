@@ -9,12 +9,16 @@ import { useNavigate } from 'react-router-dom';
 function App() {
 	//results component state
 	const [results, setResults] = useState([]);
-	//search input state
-	const [searchString, setSearchString] = useState('');
+	//search input state, default is pasta
+	const [searchString, setSearchString] = useState('pasta');
+
+	const [lastSearch, setLastSearch] = useState('');
 
 	useEffect(() => {
 		getResults(searchString);
 	}, []);
+
+	//get random recipes
 
 	// useEffect(() => {
 	// 	const url = `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_SPOON_KEY}&number=12`;
@@ -30,19 +34,13 @@ function App() {
 
 	function getResults(searchString) {
 		// build URL from user input value
-
-		// let url = '';
-
-		// if (searchString !== '') {
-		// 	url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_SPOON_KEY}&query=${searchString}&number=12`;
-		// } else {
-		const url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_SPOON_KEY}&number=12`;
-		// }
+		const url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_SPOON_KEY}&query=${searchString}&number=12`;
 
 		fetch(url)
 			.then((res) => res.json())
 			.then((res) => {
 				setResults(res.results);
+				setLastSearch(searchString);
 				setSearchString('');
 			})
 			.catch(console.error);
@@ -69,7 +67,7 @@ function App() {
 	return (
 		<div className='App'>
 			<header id='header'>
-				<Header />
+				<Header lastSearch={lastSearch} />
 			</header>
 			<div id='form'>
 				<Form
