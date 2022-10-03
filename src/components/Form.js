@@ -1,6 +1,4 @@
 import './Form.css';
-import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 function Form({ searchString, handleSubmit, handleChange }) {
 	return (
