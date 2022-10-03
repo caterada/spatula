@@ -1,83 +1,61 @@
 import './App.css';
 import Header from './components/Header';
 import Form from './components/Form';
-import Results from './components/Results';
 import Sidebar from './components/Sidebar';
 import { useState, useEffect } from 'react';
+import { Route, Routes } from 'react-router-dom';
+import Recipe from './pages/Recipe';
+import Results from './pages/Results';
+import RandomResults from './pages/RandomResults';
 import { useNavigate } from 'react-router-dom';
 
 function App() {
-	//results component state
-	const [results, setResults] = useState([]);
-	//search input state, default is pasta
-	const [searchString, setSearchString] = useState('pasta');
-
-	const [lastSearch, setLastSearch] = useState('');
-
-	useEffect(() => {
-		getResults(searchString);
-	}, []);
-
-	//get random recipes
-
-	// useEffect(() => {
-	// 	const url = `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_SPOON_KEY}&number=12`;
-
-	// 	fetch(url)
-	// 		.then((res) => res.json())
-	// 		.then((data) => {
-	// 			console.log(data);
-	// 			setRecipes(data.recipes);
-	// 		})
-	// 		.catch(console.error);
-	// }, []);
-
-	function getResults(searchString) {
-		// build URL from user input value
-		const url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_SPOON_KEY}&query=${searchString}&number=12`;
-
-		fetch(url)
-			.then((res) => res.json())
-			.then((res) => {
-				setResults(res.results);
-				setLastSearch(searchString);
-				setSearchString('');
-			})
-			.catch(console.error);
-	}
-
-	//user input value
-	function handleChange(e) {
-		setSearchString(e.target.value);
-	}
-
-	//when button is clicked, run get images
-	function handleSubmit(e) {
-		e.preventDefault();
-		// //navigate to correct url
-		// navigate(`/searched/${searchString}`);
-		getResults(searchString);
-	}
-
-	//change the title page name
+	const [searchString, setSearchString] = useState('');
 	useEffect(() => {
 		document.title = 'spatula';
 	});
 
+	const navigate = useNavigate();
+
+	//user input value
+	const handleChange = (e) => {
+		setSearchString(e.target.value);
+	};
+
+	//when button is clicked, run get images
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		// //navigate to correct url
+		navigate(`/results/:${searchString}`);
+	};
+
 	return (
 		<div className='App'>
 			<header id='header'>
-				<Header lastSearch={lastSearch} />
+				<Header />
 			</header>
 			<div id='form'>
 				<Form
+					searchString={searchString}
+					setSearchString={setSearchString}
 					handleChange={handleChange}
 					handleSubmit={handleSubmit}
-					searchString={searchString}
 				/>
 			</div>
 			<main id='results'>
-				<Results results={results} />
+				<Routes>
+					<Route path='/' element={<RandomResults />} />
+					<Route
+						path='/results/:title'
+						element={
+							<Results
+								searchString={searchString}
+								handleSubmit={handleSubmit}
+							/>
+						}
+					/>
+					<Route path='/recipe/:id' element={<Recipe />} />
+				</Routes>
 			</main>
 			<div id='sidebar'>
 				<Sidebar />

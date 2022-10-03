@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Rubik&display=swap');
+
 .App {
   display: grid;
   grid-template-columns: 20px 260px 1fr 20px;
@@ -30,4 +32,57 @@
 .App #results {
   grid-column: 3 / span 1;
   grid-row: 4 / span 1;
+}
+
+a {
+  text-decoration: none;
+}
+
+#title {
+  font-family: 'Pacifico', cursive;
+  color: #F6BD60;
+  font-size: 6rem;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(200px, 1fr));
+  grid-template-rows: repeat(4, minmax(200px, 1fr));
+  grid-gap: 1rem;
+  margin: 0 auto;
+  max-width: 1600px;
+  padding: 1rem;
+}
+
+.card {
+  display: grid;
+  grid-template-rows: 3fr 1fr;
+}
+
+.card-image {
+  justify-content: center;
+  align-items: center;
+  border-style: solid;
+  border-width: 1rem;
+  border-color: #F5CAC3;
+  border-bottom: none;
+  padding: 1rem;
+}
+
+.card-image img {
+  height: 100%;
+  width: 100%;
+}
+
+h3 {
+  text-align: center;
+  margin: 0;
+  color: #F7EDE2;
+  font-size: 1.6rem;
+  border-style: solid;
+  border-width: 1rem;
+  border-color: #F5CAC3;
+  border-top: none;
+  background-color: #84A59D;
+
 }

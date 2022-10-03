@@ -1,11 +1,15 @@
+import { Link } from 'react-router-dom';
 import './Header.css';
 
-function Header({ lastSearch }) {
+function Header() {
 	return (
 		<div>
 			<header>
-				<div id='title'>spatula</div>
-				<div className='results'>Showing results for {lastSearch}</div>
+				<div>
+					<Link to='/' style={{ textDecoration: 'none' }} id='title'>
+						spatula
+					</Link>
+				</div>
 			</header>
 		</div>
 	);
