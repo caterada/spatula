@@ -38,16 +38,18 @@ a {
   text-decoration: none;
 }
 
+/* header specific*/
 #title {
   font-family: 'Pacifico', cursive;
   color: #F6BD60;
   font-size: 6rem;
 }
 
+/* pages specific */
 .container {
   display: grid;
   grid-template-columns: repeat(3, minmax(200px, 1fr));
-  grid-template-rows: repeat(4, minmax(150px, 1fr));
+  grid-template-rows: repeat(auto, minmax(150px, 1fr));
   grid-gap: 1rem;
   margin: 0 auto;
   max-width: 1600px;
@@ -85,4 +87,21 @@ h3 {
   border-top: none;
   background-color: #84A59D;
 
+}
+
+/* recipe specific */
+.recipe-image {
+  text-align: center;
+  margin: 1rem;
+}
+
+.recipe-image img {
+  width: 50%;
+  height: 50%;
+  max-width: 500px;
+  max-height: 300px;
+}
+
+.recipe-title {
+  text-align: center;
 }
