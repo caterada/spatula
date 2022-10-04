@@ -105,3 +105,23 @@ h3 {
 .recipe-title {
   text-align: center;
 }
+
+.instructions-title {
+  margin: 0rem 0rem 0rem 2rem;
+}
+
+/* .instructions-list {
+
+}
+
+.ingredients-title {
+
+}
+
+.ingredients-list {
+
+} */
+
+iframe {
+  border: none;
+}

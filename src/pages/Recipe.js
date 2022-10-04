@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import Equipment from '../components/Equipment';
 import NutritionFacts from '../components/NutritionFacts';
 import data from '../Object.json';
 
@@ -36,9 +37,10 @@ function Recipe() {
 				<img src={data.image} alt={data.title} />
 			</div>
 			<h1 className='recipe-title'>{data.title}</h1>
-			{/* map out recipe steps */}
-			<h2>Instructions</h2>
-			<section className='data-instructions'>
+			{/* instructions section */}
+			<section className='instructions-list'>
+				<h2 className='instructions-title'>Instructions</h2>
+				{/* map out recipe steps */}
 				{data.analyzedInstructions[0].steps.map((steps, index) => (
 					<div key={index}>
 						<span key={steps.number}>
@@ -50,17 +52,20 @@ function Recipe() {
 					</div>
 				))}
 			</section>
-			{/* ingredients */}
+			{/* ingredients section*/}
 			<section className='ingredients-list'>
-				<h2>Ingredients</h2>
+				<h2 className='ingredients-title'>Ingredients</h2>
 				{data.extendedIngredients.map((ingredient, index) => (
 					// does this key have to be different than the one above?
 					<div key={index}>
-						<ul key={ingredient.name}>{ingredient.original}</ul>
+						<ul className='ingredient-name' key={ingredient.name}>
+							{ingredient.original}
+						</ul>
 					</div>
 				))}
 			</section>
 			{/* nutrition facts image */}
+			<Equipment id={data.id} />
 			<NutritionFacts id={data.id} />
 		</div>
 	);
