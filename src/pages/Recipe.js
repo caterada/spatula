@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import Equipment from '../components/Equipment';
 import NutritionFacts from '../components/NutritionFacts';
 import data from '../Object.json';
+import './Recipe.css';
 
 function Recipe() {
 	const [recipe, setRecipe] = useState(null);
@@ -22,7 +23,7 @@ function Recipe() {
 
 	useEffect(() => {
 		setRecipe(data);
-		console.log(data);
+		// console.log(data);
 	});
 
 	//render when recipe is null
@@ -32,7 +33,7 @@ function Recipe() {
 
 	//render normal return
 	return (
-		<div className='details-container'>
+		<div className='recipe-container'>
 			<div className='recipe-image'>
 				<img src={data.image} alt={data.title} />
 			</div>

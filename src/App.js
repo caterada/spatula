@@ -8,9 +8,12 @@ import Recipe from './pages/Recipe';
 import Results from './pages/Results';
 import RandomResults from './pages/RandomResults';
 import { useNavigate } from 'react-router-dom';
+import SidebarResults from './pages/SidebarResults';
 
 function App() {
 	const [searchString, setSearchString] = useState('');
+
+	//title of website
 	useEffect(() => {
 		document.title = 'spatula';
 	});
@@ -28,6 +31,11 @@ function App() {
 		// //navigate to correct url
 		navigate(`/results/:${searchString}`);
 	};
+
+	//browse by category click
+	// const handleClick = (e) => {
+	// 	navigate(`/category/:${categoryValue}`);
+	// };
 
 	return (
 		<div className='App'>
@@ -55,6 +63,7 @@ function App() {
 						}
 					/>
 					<Route path='/recipe/:id' element={<Recipe />} />
+					{/* <Route path='/category/:type' element={<SidebarResults />} /> */}
 				</Routes>
 			</main>
 			<div id='sidebar'>
