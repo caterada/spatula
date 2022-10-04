@@ -63,7 +63,7 @@ function App() {
 						}
 					/>
 					<Route path='/recipe/:id' element={<Recipe />} />
-					{/* <Route path='/category/:type' element={<SidebarResults />} /> */}
+					<Route path='/category/:type' element={<SidebarResults />} />
 				</Routes>
 			</main>
 			<div id='sidebar'>
