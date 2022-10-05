@@ -30,6 +30,7 @@ function App() {
 		e.preventDefault();
 		// //navigate to correct url
 		navigate(`/results/:${searchString}`);
+		setSearchString('');
 	};
 
 	//browse by category click

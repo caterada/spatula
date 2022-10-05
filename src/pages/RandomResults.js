@@ -5,17 +5,26 @@ import { Link } from 'react-router-dom';
 function RandomResults() {
 	//save results into useState
 	const [recipes, setRecipes] = useState([]);
+	const [error, setError] = useState(null);
 
 	useEffect(() => {
 		const url = `https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_SPOON_KEY}&number=12`;
 
 		fetch(url)
-			.then((res) => res.json())
+			.then((res) => {
+				if (!res.ok) {
+					throw Error('could not fetch data');
+				}
+				return res.json();
+			})
 			.then((data) => {
 				// console.log(data);
 				setRecipes(data.recipes);
+				setError(null);
 			})
-			.catch(console.error);
+			.catch((err) => {
+				setError(err.message);
+			});
 	}, []);
 
 	return (
@@ -35,6 +44,7 @@ function RandomResults() {
 						</div>
 					);
 				})}
+				{error && <div> {error}</div>}
 			</section>
 		</div>
 	);

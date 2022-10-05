@@ -3,6 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 
 function SidebarResults() {
 	const [category, setCategory] = useState([]);
+	const [error, setError] = useState(null);
 	let params = useParams();
 
 	useEffect(() => {
@@ -21,8 +22,11 @@ function SidebarResults() {
 			.then((res) => {
 				// console.log(res);
 				setCategory(res.results);
+				setError(null);
 			})
-			.catch(console.error);
+			.catch((err) => {
+				setError(err.message);
+			});
 	}
 
 	if (!category.length) {
@@ -45,6 +49,7 @@ function SidebarResults() {
 					</div>
 				))}
 			</section>
+			{error && <div> {error}</div>}
 		</div>
 	);
 }

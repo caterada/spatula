@@ -9,10 +9,14 @@ input {
     margin: 1rem 0rem;
     background-color: #F28482;
     color: #F7EDE2;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1rem;
 }
 
 button {
     margin: 1rem 0rem;
     background-color: #F28482;
     color:#F7EDE2;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 1rem;
 }

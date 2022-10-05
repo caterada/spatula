@@ -7,6 +7,7 @@ import './Recipe.css';
 
 function Recipe() {
 	const [recipe, setRecipe] = useState(null);
+	const [error, setError] = useState(null);
 	let params = useParams();
 
 	useEffect(() => {
@@ -18,8 +19,11 @@ function Recipe() {
 			.then((data) => {
 				// console.log(data);
 				setRecipe(data);
+				setError(null);
 			})
-			.catch(console.error);
+			.catch((err) => {
+				setError(err.message);
+			});
 	}, [params.id]);
 
 	// useEffect(() => {
@@ -70,6 +74,7 @@ function Recipe() {
 			{/* nutrition facts image */}
 			<Equipment id={recipe.id} />
 			<NutritionFacts id={recipe.id} />
+			{error && <div> {error} </div>}
 		</div>
 	);
 }

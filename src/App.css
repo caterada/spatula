@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Source+Sans+Pro&family=Lobster&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Source+Sans+Pro&family=Lobster&family=Patrick+Hand&display=swap');
 
 .App {
   display: grid;
@@ -90,6 +90,8 @@ h3 {
 .card-title {
   margin: auto;
   width: 90%;
+  font-family: 'Patrick Hand', sans-serif;
+  font-size: 3 rem;
 }
 
 /* sidebar specific */
@@ -141,4 +143,26 @@ a:-webkit-any-link {
 .hover-animation:hover:after {
   transform: scaleX(1);
   transform-origin: bottom left;
+}
+
+@media screen and (max-width: 600px) {
+  .App {
+    grid-template-columns: 5px 5px 1fr 5px;
+    grid-template-rows: 5x 200px 50px 1fr 5px;
+    background-color: #F7EDE2;
+  }
+
+  .App #results {
+    grid-column: 2 / span 2;
+  }
+
+  .App #sidebar {
+    display: none
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.5rem;
+  }
 }

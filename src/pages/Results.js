@@ -4,15 +4,14 @@ import { useParams, Link } from 'react-router-dom';
 function Results({ searchString }) {
 	//change input value
 	const [results, setResults] = useState([]);
+	const [error, setError] = useState(null);
 
 	let params = useParams();
 
 	//title comes from Routes, route to the correct url
 	useEffect(() => {
 		getResults();
-	}, [results]);
-
-	//[params.title] this is the dependency
+	}, [params.title]);
 
 	const getResults = () => {
 		// build URL from user input value
@@ -24,8 +23,12 @@ function Results({ searchString }) {
 				setResults(res.results);
 				// setLastSearch(searchString);
 				// setSearchString('');
+				setError(null);
 			})
-			.catch(console.error);
+			.catch((err) => {
+				console.log(error);
+				setError(err.message);
+			});
 	};
 
 	if (!results.length) {
@@ -48,6 +51,7 @@ function Results({ searchString }) {
 					</div>
 				))}
 			</section>
+			{error && <div> {error}</div>}
 		</div>
 	);
 }
