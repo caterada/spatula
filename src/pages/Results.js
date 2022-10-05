@@ -9,8 +9,8 @@ function Results({ searchString }) {
 
 	//title comes from Routes, route to the correct url
 	useEffect(() => {
-		getResults(params.title);
-	}, [params.title]);
+		getResults();
+	}, [results]);
 
 	//[params.title] this is the dependency
 

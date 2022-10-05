@@ -14,7 +14,7 @@ function Equipment({ id }) {
 				setEquipments(data.equipment);
 			})
 			.catch(console.error);
-	}, []);
+	}, [id]);
 
 	return (
 		<section className='equipment'>

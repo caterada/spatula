@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap');
-
 .recipe-container {
     display: grid;
     grid-template-columns: 2fr 1fr;
@@ -7,6 +5,7 @@
     grid-gap: 1rem;
     margin: 1rem;
     font-family: 'Source Sans Pro', sans-serif;
+    color: #688D81;
 }
 
 .recipe-image {
@@ -14,6 +13,8 @@
     grid-row: 1 / span 1;
     text-align: center;
     margin: 1rem;
+    border: 1rem;
+    ;
 }
 
 .recipe-image img {
@@ -36,7 +37,7 @@
 .instructions-list {
     grid-column: 1 / span 1;
     grid-row: 3 / span 3;
-    line-height: 0.5;
+    line-height: 1;
 }
 
 /* .ingredients-title {} */
@@ -44,13 +45,13 @@
 .ingredients-list {
     grid-column: 2 / span 1;
     grid-row: 3 / span 1;
-    line-height: 0.5;
+    line-height: 1;
 }
 
 .equipment-list {
     grid-column: 2 / span 1;
     grid-row: 4 / span 1;
-    line-height: 0.5;
+    line-height: 1;
 }
 
 .nutrition-facts {

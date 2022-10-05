@@ -10,7 +10,7 @@ function SidebarResults() {
 		// console.log(params);
 	}, [params]);
 
-	function getCategory(type) {
+	function getCategory() {
 		// build URL from user input value
 		const url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_SPOON_KEY}&type=${params.type}&number=12`;
 

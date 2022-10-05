@@ -58,7 +58,7 @@ function App() {
 						element={
 							<Results
 								searchString={searchString}
-								handleSubmit={handleSubmit}
+								// handleSubmit={handleSubmit}
 							/>
 						}
 					/>

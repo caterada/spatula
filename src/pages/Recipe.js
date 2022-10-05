@@ -16,11 +16,11 @@ function Recipe() {
 			.then((res) => res.json())
 			// use (data) if you want to test with Object.json data
 			.then((data) => {
-				console.log(data);
+				// console.log(data);
 				setRecipe(data);
 			})
 			.catch(console.error);
-	}, [params.name]);
+	}, [params.id]);
 
 	// useEffect(() => {
 	// 	setRecipe(data);
