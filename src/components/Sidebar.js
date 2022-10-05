@@ -19,12 +19,18 @@ function Sidebar(props) {
 			<NavLink to={'category/soup'}>
 				<p>soup</p>
 			</NavLink>
-
-			<p>salad</p>
-			<p>vegetarian</p>
-			<p>gluten-free</p>
-			<p>dessert</p>
-			<p></p>
+			<NavLink to={'category/salad'}>
+				<p>salad</p>
+			</NavLink>
+			<NavLink to={'category/beverage'}>
+				<p>beverage</p>
+			</NavLink>
+			<NavLink to={'category/snack'}>
+				<p>snack</p>
+			</NavLink>
+			<NavLink to={'category/dessert'}>
+				<p>dessert</p>
+			</NavLink>
 		</div>
 	);
 }
