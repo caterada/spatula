@@ -32,7 +32,11 @@ git clone (SSH code here)
 npx create-react-app .
 ```
 
-7. Run "npm run start"
+7. Run
+
+```bash
+npm run start
+```
 
 ## User stories:
 
