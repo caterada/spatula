@@ -4,11 +4,9 @@ function Header() {
 	return (
 		<div>
 			<header>
-				<div>
-					<Link to='/' style={{ textDecoration: 'none' }} id='title'>
-						spatula
-					</Link>
-				</div>
+				<Link to='/' style={{ textDecoration: 'none' }} id='title'>
+					spatula
+				</Link>
 			</header>
 		</div>
 	);

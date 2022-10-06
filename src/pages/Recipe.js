@@ -64,11 +64,11 @@ function Recipe() {
 				<h2 className='ingredients-title'>Ingredients</h2>
 				{recipe.extendedIngredients.map((ingredient, index) => (
 					// does this key have to be different than the one above?
-					<div key={index}>
-						<ul className='ingredient-name' key={ingredient.name}>
+					<ul key={index}>
+						<li className='ingredient-name' key={ingredient.name}>
 							{ingredient.original}
-						</ul>
-					</div>
+						</li>
+					</ul>
 				))}
 			</section>
 			{/* nutrition facts image */}

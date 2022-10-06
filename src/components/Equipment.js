@@ -21,9 +21,9 @@ function Equipment({ id }) {
 			<h2 className='equipment-title'>Equipment data</h2>
 			<div className='equipment-list'>
 				{equipments.map((equipment, index) => (
-					<div key={index}>
-						<ul key={equipment.name}>{equipment.name}</ul>
-					</div>
+					<ul key={index}>
+						<li key={equipment.name}>{equipment.name}</li>
+					</ul>
 				))}
 			</div>
 		</section>
