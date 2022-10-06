@@ -1,7 +1,7 @@
-##spatula app
+## spatula app
 
 Description:
-spatula is an app designed to look up recipes that return the user back a list of recipes with their images and descriptions. Users can then click on the image to check the instructions, ingredients and equipment necessary, and nutrition facts of the recipe. I wanted to create this app since I enjoy cooking, and I often have trouble deciding what to cook.
+spatula is an app designed to look up recipes that return the user back a list of recipes with their images and descriptions. Users can then click on the image to check the instructions, ingredients and equipment necessary, and nutrition facts of the recipe. I wanted to create this app since I enjoy cooking, and I often have trouble deciding what to cook. The app is using api data from [spoonacular](https://spoonacular.com/food-api).
 
 ![embedded screenshot of spatula app](images/spatula-preview.png)
 
@@ -14,6 +14,25 @@ spatula is an app designed to look up recipes that return the user back a list o
 ## Installation Instruction:
 
 Access at: https://spatula-recipes.netlify.app/
+If you would like to fork and clone this app, please follow the steps below:
+
+1. Access at https://github.com/caterada/spatula
+2. Fork the repository
+3. Go to your terminal and cd into the folder you would like to clone the project directory into
+4. Copy the SSH code and enter the following in your terminal:
+
+```bash
+git clone (SSH code here)
+```
+
+5. Create a new branch "git checkout -b (branch name here)"
+6. Install react by entering:
+
+```bash
+npx create-react-app .
+```
+
+7. Run "npm run start"
 
 ## User stories:
 
@@ -38,6 +57,10 @@ AAU = As a user...
 3. Getting equipment data to render
 4. Mapping out instructions correctly
 
+## Contribution Guidelines
+
+For all questions, comments, or contributions to the project, please feel free to open a new issue on the github which can be found [here](https://github.com/caterada/spatula/issues).
+
 ## Credits
 
-Favicon credit: (https://www.flaticon.com/free-icons/spatula) icons created by Freepik - Flaticon
+Favicon credit: [icons created by Freepik - Flaticon](https://www.flaticon.com/free-icons/spatula)
