@@ -30,7 +30,6 @@ function App() {
 		e.preventDefault();
 		// //navigate to correct url
 		navigate(`/results/:${searchString}`);
-		// {searchString}=;
 	};
 
 	return (
@@ -54,7 +53,8 @@ function App() {
 						element={
 							<Results
 								searchString={searchString}
-								handleSubmit={handleSubmit}
+								// handleSubmit={handleSubmit}
+								setSearchString={setSearchString}
 							/>
 						}
 					/>

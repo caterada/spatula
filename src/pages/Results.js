@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 
-function Results({ searchString }) {
+function Results({ searchString, setSearchString }) {
 	//change input value
 	const [results, setResults] = useState([]);
 	const [error, setError] = useState(null);
@@ -22,6 +22,7 @@ function Results({ searchString }) {
 			.then((res) => {
 				setResults(res.results);
 				setError(null);
+				setSearchString('');
 			})
 			.catch((err) => {
 				console.log(error);
