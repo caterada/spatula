@@ -1,4 +1,4 @@
-![embedded screenshot of spatula app](https://spatula-recipes.netlify.app/images/spatula-preview.png)
+![embedded screenshot of spatula app](images/spatula-preview.png)
 
 ## List of Technologies used:
 
@@ -24,7 +24,7 @@ AAU = As a user...
 
 ## Wireframes:
 
-![embedded screenshot of spatula app](https://spatula-app.netlify.app/images/spatula-wireframe.png)
+![embedded screenshot of spatula app](images/spatula-wireframe.png)
 
 ## Major hurdles:
 
