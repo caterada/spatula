@@ -10,7 +10,7 @@ function Results({ searchString }) {
 
 	//title comes from Routes, route to the correct url
 	useEffect(() => {
-		getResults();
+		getResults(params.title);
 	}, [params.title]);
 
 	const getResults = () => {
@@ -21,8 +21,6 @@ function Results({ searchString }) {
 			.then((res) => res.json())
 			.then((res) => {
 				setResults(res.results);
-				// setLastSearch(searchString);
-				// setSearchString('');
 				setError(null);
 			})
 			.catch((err) => {

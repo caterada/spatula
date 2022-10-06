@@ -67,4 +67,5 @@ For all questions, comments, or contributions to the project, please feel free t
 
 ## Credits
 
-Favicon credit: [icons created by Freepik - Flaticon](https://www.flaticon.com/free-icons/spatula)
+Favicon: [icons created by Freepik - Flaticon](https://www.flaticon.com/free-icons/spatula)
+Header background: [Hero Patterns](https://heropatterns.com/)

@@ -30,13 +30,8 @@ function App() {
 		e.preventDefault();
 		// //navigate to correct url
 		navigate(`/results/:${searchString}`);
-		setSearchString('');
+		// {searchString}=;
 	};
-
-	//browse by category click
-	// const handleClick = (e) => {
-	// 	navigate(`/category/:${categoryValue}`);
-	// };
 
 	return (
 		<div className='App'>
@@ -59,7 +54,7 @@ function App() {
 						element={
 							<Results
 								searchString={searchString}
-								// handleSubmit={handleSubmit}
+								handleSubmit={handleSubmit}
 							/>
 						}
 					/>
