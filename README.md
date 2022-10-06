@@ -1,3 +1,8 @@
+##spatula app
+
+Description:
+spatula is an app designed to look up recipes that return the user back a list of recipes with their images and descriptions. Users can then click on the image to check the instructions, ingredients and equipment necessary, and nutrition facts of the recipe. I wanted to create this app since I enjoy cooking, and I often have trouble deciding what to cook.
+
 ![embedded screenshot of spatula app](images/spatula-preview.png)
 
 ## List of Technologies used:
