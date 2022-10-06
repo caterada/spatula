@@ -12,6 +12,7 @@
   grid-row: 1 / span 2;
   text-align: center;
   position: sticky;
+  z-index: 1;  
   top: 0;
   /* background pattern credit: heropatterns.com */
   background-color: #84a59d;
