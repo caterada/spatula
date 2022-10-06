@@ -1,5 +1,4 @@
 import { NavLink } from 'react-router-dom';
-import StickyBox from 'react-sticky-box';
 
 //use Routes to display different category results
 
