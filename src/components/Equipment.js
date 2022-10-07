@@ -10,7 +10,6 @@ function Equipment({ id }) {
 		)
 			.then((res) => res.json())
 			.then((data) => {
-				// console.log(data.equipment);
 				setEquipments(data.equipment);
 			})
 			.catch(console.error);

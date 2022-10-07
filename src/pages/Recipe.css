@@ -34,10 +34,6 @@
     text-align: center;
 }
 
-/* .instructions-title {
-
-} */
-
 .instructions-list {
     grid-column: 1 / span 1;
     grid-row: 3 / span 3;

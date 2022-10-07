@@ -17,7 +17,6 @@ function Recipe() {
 			.then((res) => res.json())
 			// use (data) if you want to test with Object.json data
 			.then((data) => {
-				// console.log(data);
 				setRecipe(data);
 				setError(null);
 			})
@@ -25,11 +24,6 @@ function Recipe() {
 				setError(err.message);
 			});
 	}, [params.id]);
-
-	// useEffect(() => {
-	// 	setRecipe(data);
-	// 	// console.log(data);
-	// });
 
 	//render when recipe is null
 	if (!recipe) {

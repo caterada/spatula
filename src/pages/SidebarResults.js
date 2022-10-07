@@ -8,19 +8,15 @@ function SidebarResults() {
 
 	useEffect(() => {
 		getCategory(params);
-		// console.log(params);
 	}, [params]);
 
 	function getCategory() {
 		// build URL from user input value
 		const url = `https://api.spoonacular.com/recipes/complexSearch?apiKey=${process.env.REACT_APP_SPOON_KEY}&type=${params.type}&number=12`;
 
-		// console.log(url);
-
 		fetch(url)
 			.then((res) => res.json())
 			.then((res) => {
-				// console.log(res);
 				setCategory(res.results);
 				setError(null);
 			})

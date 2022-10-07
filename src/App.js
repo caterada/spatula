@@ -53,7 +53,6 @@ function App() {
 						element={
 							<Results
 								searchString={searchString}
-								// handleSubmit={handleSubmit}
 								setSearchString={setSearchString}
 							/>
 						}
